@@ -1,0 +1,133 @@
+<div class="container-fluid mt-3">
+  <form class="form" [formGroup]="ContactForm">
+    <h3 class="mt-3 mb-3">User Registration</h3>
+    <fieldset>
+      <legend>
+         User Details
+      </legend>
+      <div class="row mt-3">
+        <label class="label col-md-2" for="firstName">First Name</label>
+        <input type="text" class="form-control form-control-sm col-md-6" formControlName="firstName" name="firstName"
+          id="firstName" placeholder="Enter First Name" />
+      </div>
+      <div class="row mt-2">
+        <label class="label col-md-2" for="secondName">Second Name</label>
+        <input type="text" class="form-control form-control-sm col-md-6" formControlName="secondName" name="secondName"
+          id="secondName" placeholder="Enter Second Name" />
+      </div>
+      <div class="row mt-2">
+        <label class="label col-md-2" for="middleName">Middle Name</label>
+        <input type="text" class="form-control form-control-sm col-md-6" formControlName="middleName" name="middleName"
+          id="middleName" placeholder="Enter Middle Name" />
+      </div>
+      <div class="row mt-2">
+        <label class="label col-md-2">Gender</label>
+        <div class="col-md-1">
+          <input type="radio" class="form-check-input" formControlName="gender" name="gender" id="male" value="male" />
+          <label class="label" for="male">Male</label>
+        </div>
+        <div class="col-md-1">
+          <input type="radio" class="form-check-input" formControlName="gender" name="gender" id="female"
+            value="female" />
+          <label class="label" for="female">Female</label>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <label class="label col-md-2" for="username">Username</label>
+        <input type="text" class="form-control form-control-sm col-md-6" formControlName="username" name="username"
+          id="username" placeholder="Enter Username" />
+      </div>
+      <div class="row mt-2">
+        <label class="label col-md-2" for="email">Email Address</label>
+        <input type="text" class="form-control form-control-sm col-md-6" formControlName="email" name="email" id="email"
+          placeholder="Enter Email Address" />
+      </div>
+      <div class="row mt-2">
+        <label class="label col-md-2" for="password">Password</label>
+        <input type="password" class="form-control form-control-sm col-md-6" formControlName="password" name="password"
+          id="password" placeholder="Enter Password" />
+      </div>
+      <div class="row mt-2">
+        <label class="label col-md-2" for="mobile">Mobile</label>
+        <input type="text" class="form-control form-control-sm col-md-6" formControlName="mobile" name="mobile"
+          id="mobile" placeholder="Enter Mobile" />
+      </div>
+      <div class="row mt-2">
+        <label class="label col-md-2" for="workStatus">Work Status</label>
+        <select class="form-control form-control-sm col-md-6" formControlName="workStatus" name="workStatus"
+          id="workStatus">
+          <option value="" selected disabled>Selected</option>
+          <option value="Fresher">Fresher</option>
+          <option value="Experienced">Experienced</option>
+        </select>
+      </div>
+    </fieldset>
+    <ng-container *ngIf="isExperienced">
+      <fieldset>
+        <legend>
+         Work Experience 
+        </legend>
+        <div class="row mt-2">
+          <label class="label col-md-2" for="workExperience">Total Years of Experience</label>
+          <select class="form-control form-control-sm col-md-6" formControlName="workExperience" name="workExperience"
+            id="workExperience">
+            <option value="" selected disabled>Select Years Of Experience</option>
+            <option value="0-1">0 to 1 Year</option>
+            <option value="1-2">1 to 2 Years</option>
+            <option value="3-5">3 to 5 Years</option>
+            <option value="5-7">5 to 7 Years</option>
+            <option value="7-10">7 to 10 Years</option>
+            <option value="10-or-more">More than 10 Years</option>
+          </select>
+        </div>
+
+        <div class="row mt-2">
+          <label class="label col-md-2" for="currentCompany">Current Company Name</label>
+          <input type="text" class="form-control form-control-sm col-md-6" formControlName="currentCompany"
+            name="currentCompany" id="currentCompany" placeholder="Enter Current Company Name" />
+        </div>
+
+        <div class="row mt-2">
+          <label class="label col-md-2" for="currentCtc">Current CTC</label>
+          <input type="text" class="form-control form-control-sm col-md-6" formControlName="currentCtc"
+            name="currentCtc" id="currentCtc" placeholder="Enter Current CTC" />
+        </div>
+
+        <div class="row mt-2">
+          <label class="label col-md-2" for="expectedCtc">Expected CTC</label>
+          <input type="text" class="form-control form-control-sm col-md-6" formControlName="expectedCtc"
+            name="expectedCtc" id="expectedCtc" placeholder="Enter Expected CTC" />
+        </div>
+
+        <div class="row mt-2">
+          <label class="label col-md-2" for="skills">Skills Set</label>
+          <input type="text" class="form-control form-control-sm col-md-6" formControlName="skills" name="skills"
+            id="skills" placeholder="Enter Skills E.g. Java,Python" />
+        </div>
+        <div class="row mt-2">
+          <p class="m-3" style="color: red;">Note:: Give Skills as comma separated e.g. java,python</p>
+        </div>
+
+        <div class="row mt-2">
+          <label class="label col-md-2" for="noticePeriod">Notice Period</label>
+          <select class="form-control form-control-sm col-md-6" formControlName="noticePeriod" name="noticePeriod"
+            id="noticePeriod">
+            <option value="" selected disabled>Select Notice Period</option>
+            <option value="immediate-joiner">Immediate Joiner</option>
+            <option value="15-or-less-than">15 days or less than</option>
+            <option value="1-month">1 Month</option>
+            <option value="45-days">45 Days</option>
+            <option value="2-months">2 Months</option>
+            <option value="3-months">3 Months</option>
+            <option value="more-than-3months">More than 3 months</option>
+          </select>
+        </div>
+      </fieldset>
+    </ng-container>
+    <div class="row mt-2">
+      <button class="btn btn-primary m-3" type="submit" [disabled]="!ContactForm.valid">Submit</button>
+      <button class="btn btn-danger m-3" type="button" (click)="resetForm()">Reset</button>
+    </div>
+  </form>
+  <!-- {{form.value | json }} -->
+</div>
